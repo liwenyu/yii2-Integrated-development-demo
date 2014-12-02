@@ -1,4 +1,4 @@
-Yii 2 Advanced Application Template
+开发展示 YII2.0 扩展应用程序
 ===================================
 
 Yii 2 Advanced Application Template is a skeleton Yii 2 application best for
