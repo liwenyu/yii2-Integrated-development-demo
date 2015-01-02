@@ -46,4 +46,6 @@
     ],
 
     运行 yii migrate --migrationPath=@yii/rbac/migrations/ 生成权限数据表
+
+    权限模块我们取名为 `auth` 模块，在 `frontend` 目录下面
 ```
