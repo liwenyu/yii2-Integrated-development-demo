@@ -1,5 +1,4 @@
 <?php
-
 namespace frontend\modules\auth\controllers;
 
 use yii\web\Controller;
