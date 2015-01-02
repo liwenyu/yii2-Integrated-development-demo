@@ -32,6 +32,23 @@
     ],
 ```
 
+* 配置 urlManage (路由)
+
+```php
+    'urlManager' => [
+        'enablePrettyUrl' => true,
+        'showScriptName' => true,
+        'showScriptName' => false, // 需要在 web 目录下面添加 `.htaccess` 文件
+        'rules' => [
+            '' => 'site/index',
+            '<controller:(consult|finacial)>' => '<controller>/index',
+            '<controller:(consult|finacial)>/<id:\d+>' => '<controller>/view',
+            '<action:\w+>' => 'user/<action>',
+        ],
+    ],
+
+    配置完最终结果为 http://localhost/yii2-Integrated-development-demo/frontend/web/
+```
 
 * 配置权限(RBAC)部分
 
