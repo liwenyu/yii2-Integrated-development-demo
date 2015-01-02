@@ -12,12 +12,12 @@
 配置 yii2.0
 -----------------------------------
 
-###初始化项目
+* 初始化项目
 
 > `php init`
 
 
-###配置数据库部分
+* 配置数据库部分
 
 > common/config/main-local.php
 ```php
@@ -29,3 +29,19 @@
         'charset' => 'utf8',  // 数据库字符集
     ],
 ```
+
+
+* 配置权限(RBAC)部分
+
+> 创建 `rbac` 数据库,首先需要在 `common/config/mian.php` 进行配置，配置完毕运行下方命令如下
+
+```php
+    'authManager' => [
+        'class' => 'yii\rbac\DbManager'
+        'itemTable' => 'auth_item',
+        'assignmentTable' => 'auth_assignment',
+        'itemChildTable' => 'auth_item_child',
+    ],
+```
+
+> 运行 yii migrate --migrationPath=@yii/rbac/migrations/ 生成权限数据表
