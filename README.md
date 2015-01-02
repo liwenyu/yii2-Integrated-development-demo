@@ -43,13 +43,13 @@
         'showScriptName' => false, // 需要在 web 目录下面添加 `.htaccess` 文件
         'rules' => [
             '' => 'site/index',
-            '<controller:(consult|finacial)>' => '<controller>/index',
-            '<controller:(consult|finacial)>/<id:\d+>' => '<controller>/view',
-            '<action:\w+>' => 'user/<action>',
+            '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+            '<modules:\w+>/<controller:\w+>/<action:\w+>' => '<modules>/<controller>/<action>',
         ],
     ],
 
-    配置完最终结果为 http://localhost/yii2-Integrated-development-demo/frontend/web/
+    配置完最终结果为 http://localhost/yii2-Integrated-development-demo/frontend/web/  可是不够友好，我们虚拟一个
+    域名为  local.yii.com
 ```
 
 * 配置权限(RBAC)部分
@@ -67,4 +67,12 @@
     运行 yii migrate --migrationPath=@yii/rbac/migrations/ 生成权限数据表
 
     使用 gii 生成权限模块，我们取名为 `auth` 模块，在 `frontend` 目录下面
+
+    配置所生成的 `auth` 模块可以在项目中被找到
+
+    'modules' => [
+        'auth' => [
+            'class' => 'frontend\modules\auth\Module',
+        ],
+    ],
 ```

@@ -11,6 +11,11 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+        'auth' => [
+            'class' => 'frontend\modules\auth\Module',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
@@ -23,9 +28,8 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
-                '<controller:(consult|finacial)>' => '<controller>/index',
-                '<controller:(consult|finacial)>/<id:\d+>' => '<controller>/view',
-                '<action:\w+>' => 'user/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                '<modules:\w+>/<controller:\w+>/<action:\w+>' => '<modules>/<controller>/<action>',
             ],
         ],
         'log' => [
