@@ -15,6 +15,18 @@ return [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => ['site/login'],
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => true,
+            'showScriptName' => false,
+            'rules' => [
+                '' => 'site/index',
+                '<controller:(consult|finacial)>' => '<controller>/index',
+                '<controller:(consult|finacial)>/<id:\d+>' => '<controller>/view',
+                '<action:\w+>' => 'user/<action>',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
