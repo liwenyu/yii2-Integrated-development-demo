@@ -43,5 +43,4 @@
         'itemChildTable' => 'auth_item_child',
     ],
 ```
-
-> 运行 yii migrate --migrationPath=@yii/rbac/migrations/ 生成权限数据表
+运行 yii migrate --migrationPath=@yii/rbac/migrations/ 生成权限数据表
