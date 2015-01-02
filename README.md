@@ -35,6 +35,8 @@
 * 配置 urlManage (路由)
 
 ```php
+    frontend/config/main.php
+
     'urlManager' => [
         'enablePrettyUrl' => true,
         'showScriptName' => true,
