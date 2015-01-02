@@ -10,6 +10,7 @@
 >http://www.yiichina.com/download  这里的下载已经写得很详细了，按着步骤走，基本不会出现什么问题的. good luck
 
 配置 yii2.0
+-----------------------------------
 
 ###初始化项目
 
@@ -18,5 +19,13 @@
 
 ###配置数据库部分
 
-> 
-
+> common/config/main-local.php
+```php
+    'db' => [
+        'class' => 'yii\db\Connection',
+        'dsn' => 'mysql:host=localhost;dbname=yii2advanced', // host主机  dbname 数据库名称
+        'username' => 'root', //管理员账号
+        'password' => '123456', //管理员密码
+        'charset' => 'utf8',  // 数据库字符集
+    ],
+```
