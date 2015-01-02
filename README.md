@@ -14,13 +14,15 @@
 
 * 初始化项目
 
-> `php init`
-
+```php
+    php init
+```
 
 * 配置数据库部分
 
-> common/config/main-local.php
 ```php
+    common/config/main-local.php
+
     'db' => [
         'class' => 'yii\db\Connection',
         'dsn' => 'mysql:host=localhost;dbname=yii2advanced', // host主机  dbname 数据库名称
@@ -33,14 +35,15 @@
 
 * 配置权限(RBAC)部分
 
-> 创建 `rbac` 数据库,首先需要在 `common/config/mian.php` 进行配置，配置完毕运行下方命令如下
-
 ```php
+    创建 `rbac` 数据库,首先需要在 `common/config/mian.php` 进行配置，配置完毕运行下方命令如下
+
     'authManager' => [
         'class' => 'yii\rbac\DbManager'
         'itemTable' => 'auth_item',
         'assignmentTable' => 'auth_assignment',
         'itemChildTable' => 'auth_item_child',
     ],
+
+    运行 yii migrate --migrationPath=@yii/rbac/migrations/ 生成权限数据表
 ```
-运行 yii migrate --migrationPath=@yii/rbac/migrations/ 生成权限数据表
